@@ -8,11 +8,7 @@ Enzyme.configure({adapter: new Adapter()});
 it(`Welcome btn correctly handles clicks`, () => {
   const clickHandler = jest.fn();
   const welcomeScreen = shallow(
-      <WelcomeScreen
-        time={0}
-        errorCount={0}
-        welcomeButtonHandler={clickHandler}
-      />
+      <WelcomeScreen time={0} errorCount={0} onStartButtonClick={clickHandler} />
   );
 
   const startButton = welcomeScreen.find(`.welcome__button`);
